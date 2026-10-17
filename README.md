@@ -31,14 +31,14 @@ Aplicación de escritorio hecha con Electron que consulta la API pública [Poké
 ```
 pokedex-explorer/
 ├── package.json
-├── main.js              # Proceso principal de Electron y consultas a la API
-├── preload.js           # Puente seguro (contextBridge)
+├── main.js             
+├── preload.js           
 ├── src/
 │   ├── index.html
 │   ├── css/
 │   │   └── styles.css
 │   └── js/
-│       └── app.js       # Lógica de la interfaz: listado, búsqueda y filtros
+│       └── app.js     
 └── assets/
     └── icon.png
 ```
