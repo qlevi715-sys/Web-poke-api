@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://raw.githubusercontent.com data:; style-src 'self'; script-src 'self'">
+    <title>Pokédex Explorer</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="topbar">
+        <h1>Pokédex Explorer</h1>
+        <p>Busca y filtra los 493 Pokémon hasta la 4 generacion</p>
+    </header>
+
+    <section class="toolbar" aria-label="Búsqueda y filtros">
+        <label class="field field-search">
+            <span>Buscar</span>
+            <input id="search" type="search" placeholder="Nombre o número (ej. pikachu, 25)..." autocomplete="off">
+        </label>
+
+        <label class="field">
+            <span>Tipo</span>
+            <select id="filter-type"><option value="">Todos</option></select>
+        </label>
+
+        <label class="field">
+            <span>Habilidad</span>
+            <select id="filter-ability"><option value="">Todas</option></select>
+        </label>
+
+        <label class="field">
+            <span>Altura</span>
+            <select id="filter-height">
+                <option value="">Cualquiera</option>
+                <option value="small">Pequeño (menos de 0.6 m)</option>
+                <option value="medium">Mediano (0.6 a 1.5 m)</option>
+                <option value="large">Grande (más de 1.5 m)</option>
+            </select>
+        </label>
+
+        <label class="field">
+            <span>Peso</span>
+            <select id="filter-weight">
+                <option value="">Cualquiera</option>
+                <option value="light">Ligero (menos de 10 kg)</option>
+                <option value="medium">Medio (10 a 50 kg)</option>
+                <option value="heavy">Pesado (más de 50 kg)</option>
+            </select>
+        </label>
+
+        <label class="field">
+            <span>Ordenar por</span>
+            <select id="sort">
+                <option value="id">Número</option>
+                <option value="name">Nombre (A-Z)</option>
+                <option value="attack">Ataque (mayor)</option>
+                <option value="weight">Peso (mayor)</option>
+                <option value="height">Altura (mayor)</option>
+            </select>
+        </label>
+
+        <button id="clear" class="btn" type="button">Limpiar filtros</button>
+    </section>
+
+    <main>
+        <p id="count" class="count"></p>
+        <p id="status" class="status" role="status"></p>
+        <div id="grid" class="grid"></div>
+
+        <nav class="pagination" aria-label="Paginación">
+        <button id="btn-anterior" class="btn" type="button">&laquo; Anterior</button>
+        <span id="info-pagina">Página 1</span>
+        <button id="btn-siguiente" class="btn" type="button">Siguiente &raquo;</button>
+    </nav>
+    </main>
+
+    <template id="pokemon-template">
+        <article class="card">
+            <div class="poster">
+                <img class="poster-img" alt="" loading="lazy">
+                <div class="no-poster hidden">Sin imagen</div>
+            </div>
+            <div class="card-body">
+                <p class="number"></p>
+                <h3 class="title"></h3>
+                <ul class="types"></ul>
+                <p class="meta"></p>
+                <p class="stats"></p>
+                <p class="abilities"></p>
+            </div>
+        </article>
+    </template>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

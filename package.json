@@ -1,0 +1,17 @@
+{
+  "name": "Ejercicio_02",
+  "productName": "Pokédex Explorer",
+  "version": "1.0.0",
+  "description": "Aplicacion de escritorio para buscar y filtrar Pokemon usando PokeAPI",
+  "author": "Olmert Levi Quintanilla Hernandez",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "electron": "^44.8.0"
+  }
+}
